@@ -1,0 +1,31 @@
+*network NetworkX
+*vertices 10
+1 Jane 0.0 0.0 ellipse
+2 Ike 0.0 0.0 ellipse
+3 Heather 0.0 0.0 ellipse
+4 Garth 0.0 0.0 ellipse
+5 Ed 0.0 0.0 ellipse
+6 Beverly 0.0 0.0 ellipse
+7 Andre 0.0 0.0 ellipse
+8 Carol 0.0 0.0 ellipse
+9 Fernando 0.0 0.0 ellipse
+10 Diane 0.0 0.0 ellipse
+*edges
+1 2 1.0
+2 3 1.0
+3 4 1.0
+3 9 1.0
+4 5 1.0
+4 6 1.0
+4 10 1.0
+4 9 1.0
+5 6 1.0
+5 10 1.0
+6 7 1.0
+6 10 1.0
+7 8 1.0
+7 9 1.0
+7 10 1.0
+8 9 1.0
+8 10 1.0
+9 10 1.0
