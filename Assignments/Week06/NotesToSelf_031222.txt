@@ -1,0 +1,91 @@
+# project bipartite graph onto women nodes keeping number of co-occurence
+# the degree computed is weighted and counts the total number of shared contacts
+W = bi.weighted_projected_graph(G, women, ratio=False)
+print('')
+print("#Friend meetings, Member")
+for w in women:
+    print('%d %s' % (W.degree(w,weight='weight'),w))
+
+W
+
+# compared to the book, removed the [0] at the end
+list_W=list(nx.connected_component_subgraphs(W))
+
+Wnet = list_W[0]
+
+weights=[math.log(edata['weight']) for f,t,edata in Wnet.edges(data=True)]
+
+nx.draw_networkx(Wnet,width=weights, edge_color=weights)
+
+# Need to create histogram of the weights
+sns.histplot(data=weights);
+
+## The weights histogram is logarithmic;
+## we should compute the original weight = e^log_weight
+Wnet_trim=trim_edges(Wnet, weight=math.exp(1.5))
+
+## re-calculate weights based on the new graph
+weights=[edata['weight'] for f,t,edata in Wnet_trim.edges(data=True)]
+nx.draw_networkx(Wnet_trim,width=weights, edge_color=weights)
+
+
+
+
+
+Conclusion:
+Appears to be two islands of women within the full list
+And using the weights of the projected graph, we see the boundary spanners are Therea A, Ruth D on one side and Nora F, Verne S and Sylvia A on the other side
+
+The most connected pair of women is Evelyn J and Therea A, which means they 
+
+The three most influential people are Evelyn and Theresa together, and then Sylvia A
+
+When expanding the weighted graph, Evelyn is not a boundary spanner though
+
+applying the island method to the Events, we see strongest connection between E8 and E9, and the full island as E3, E5, E6, E7, E8, E9
+
+Graph is bi-partite based on Networkx function
+
+Is connected, Yes, based on Networkx function
+
+Based on degrees, E9 has 12, E8 has 14, E7 has 10
+Theresa A has 8, Evelyn J has 8, Nora F has 8
+
+
+
+figure out 'density', maximum_matching
+
+
+
+
+{'Evelyn Jefferson': 17,*
+ 'Theresa Anderson': 17,*
+ 'Ruth DeSand': 17,*
+ 'Verne Sanderson': 17,*
+ 'Sylvia Avondale': 17,*
+ 'Nora Fayette': 17,*
+ 'Helen Lloyd': 17,*
+ 'Pearl Oglethorpe': 16, Helen, Flora, Olivia
+ 'Myra Liddel': 16,*
+ 'Katherina Rogers': 16,*
+ 'Dorothy Murchison': 16,
+ 'Laura Mandeville': 15,*
+ 'Brenda Rogers': 15,*
+ 'Frances Anderson': 15,*
+ 'Eleanor Nye': 15,*
+ 'Olivia Carleton': 12,
+ 'Flora Price': 12,
+ 'Charlotte McDowd': 11}*
+
+
+
+Label histogram plot appropriately
+
+Paragraph to discussing events: ... not interested for xyz
+
+intro: main conclusions and methods to get to conclusion
+
+compare/contrast analysis at the end of the 2 sections
+
+Events, not Clubs
+
