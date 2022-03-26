@@ -1,0 +1,35 @@
+HJRES
+HR
+None
+PN
+S
+SCONRES
+SJRES
+SRES
+
+Meetup with Alex 3/20/22
+
+govtrack.us
+
+two nodes per vote on only defense bills
+spyder IDE
+
+use nominate for x-axis placement
+
+https://www.audimute.com/blog/dog-barking-noise/
+
+gephi
+
+key punchline, what I expect to see in first sectino, summaryizes keey points
+
+what questions I seek to answer for the background section ... what am I trying to answer
+
+nx.
+
+graphml_file = "S113_voting.graphml"
+nx.write_graphml( G_covoting, graphml_file )
+
+
+something interactive
+https://pypi.org/project/node/#history
+
